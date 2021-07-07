@@ -12,7 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.eduardo.auth.jwt.JwtConfigure;
 import com.eduardo.auth.jwt.JwtTokenProvider;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @Configuration
+@EnableSwagger2
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private final JwtTokenProvider jwtTokenProvider;
@@ -43,8 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and()
 			.authorizeRequests()
-			.antMatchers("/login").permitAll()
-			.anyRequest().authenticated()
+			.anyRequest().permitAll()
+			//			.antMatchers("/login").permitAll()
+//			.anyRequest().authenticated()
 		.and()
 		.apply(new JwtConfigure(jwtTokenProvider));
 		
