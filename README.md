@@ -18,5 +18,5 @@ microserviço de autenticação para utilização dos microserviços crud e paga
 #Execução
 1. Acesse o diretório ...\auth\src\main\resources> via cmd execute o comando docker-compose up para levantar o container do MySQL e RabbitMQ
 2. Start o microservico-auth
-3. [Gere o token JWT pelo swagger utilizando usuário e senha = admin](http://localhost:8083/auth/swagger-ui.html#/auth-controller) 
+3. [Gere o token JWT pelo swagger utilizando usuário e senha = admin em localhost](http://localhost:8083/auth/swagger-ui.html#/auth-controller) 
 4. Guarde o token Bearer
